@@ -8,7 +8,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [],
+  "keywords": [
+    "ESModule"
+  ],
   "author": "Diego Siney",
   "license": "ISC",
   "dependencies": {
