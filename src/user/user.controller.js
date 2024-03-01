@@ -37,17 +37,37 @@ export const createUser = async (req, res) => {
 // Actualizar Usuario
 export const updateUser = async (req, res = response) => {
     const { id } = req.params;
-    const { _id, password: newPassword, ...rest } = req.body;
-    if (newPassword) {
-        const salt = bcryptjs.genSaltSync();
-        rest.password = bcryptjs.hashSync(newPassword, salt);
+    const { oldPassword, newPassword, ...rest } = req.body;
+
+    try {
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ msg: 'User not found' });
+        }
+
+        // Verificar la contraseña anterior
+        const validPassword = bcryptjs.compareSync(oldPassword, user.password);
+        if (!validPassword) {
+            return res.status(400).json({ msg: 'Incorrect old password' });
+        }
+
+        // Actualizar la contraseña si se proporciona una nueva
+        if (newPassword) {
+            const salt = bcryptjs.genSaltSync();
+            rest.password = bcryptjs.hashSync(newPassword, salt);
+        }
+
+        await User.findByIdAndUpdate(id, rest);
+
+        const updatedUser = await User.findById(id);
+
+        res.status(200).json({
+            msg: 'Updated User',
+            user: updatedUser,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: 'Internal server error' });
     }
-    await User.findByIdAndUpdate(id, rest);
-
-    const user = await User.findOne({ _id: id });
-
-    res.status(200).json({
-        msg: 'Updated User',
-        user,
-    });
 }
