@@ -5,6 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import userRoutes from '../src/user/user.routes.js';
+import authRoutes from '../src/auth/auth.routes.js';
 import { dbConnection } from './mongo.js';
 
 class Server{
@@ -12,6 +13,7 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         this.usuarioPath = '/postmanager/v1/users';
+        this.authPath = '/postmanager/v1/auth';
 
         this.middlewares();
         this.conectarDB();
@@ -32,6 +34,7 @@ class Server{
 
     routes(){
         this.app.use(this.usuarioPath, userRoutes);
+        this.app.use(this.authPath, authRoutes);
     }
 
     listen(){
