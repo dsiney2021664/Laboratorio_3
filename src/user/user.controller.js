@@ -46,13 +46,11 @@ export const updateUser = async (req, res = response) => {
             return res.status(404).json({ msg: 'User not found' });
         }
 
-        // Verificar la contraseña anterior
         const validPassword = bcryptjs.compareSync(oldPassword, user.password);
         if (!validPassword) {
             return res.status(400).json({ msg: 'Incorrect old password' });
         }
 
-        // Actualizar la contraseña si se proporciona una nueva
         if (newPassword) {
             const salt = bcryptjs.genSaltSync();
             rest.password = bcryptjs.hashSync(newPassword, salt);

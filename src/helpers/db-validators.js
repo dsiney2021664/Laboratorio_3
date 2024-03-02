@@ -15,3 +15,11 @@ export const existeUsuarioById = async (id = '') => {
         throw new Error(`The ID: ${id} does not exist`);
     }
 }
+
+export const existePostById = async (id = '') => {
+    const existePost = await Post.findById(id);
+
+    if (!existePost) {
+        throw new Error(`The ID: ${id} does not exist`);
+    }
+}
