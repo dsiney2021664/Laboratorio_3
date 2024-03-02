@@ -15,7 +15,7 @@ class Server{
         this.port = process.env.PORT;
         this.usuarioPath = '/postmanager/v1/users';
         this.authPath = '/postmanager/v1/auth';
-        this.postRoutes = '/postmanager/v1/post'
+        this.postPath = '/postmanager/v1/post'
 
         this.middlewares();
         this.conectarDB();

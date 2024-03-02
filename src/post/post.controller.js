@@ -8,7 +8,7 @@ export const getPosts = async (req = request, res = response) => {
             posts,
         });
     } catch (e) {
-        console.e(e);
+        console.error(e);
         res.status(500).json({
             msg: 'Internal server error'
         });
@@ -16,7 +16,7 @@ export const getPosts = async (req = request, res = response) => {
 }
 
 export const createPost = async (req, res = response) => {
-    const { title, category, mainText } = req.bofy;
+    const { title, category, mainText } = req.body;
     const createdBy = req.user.id;
 
     try {
@@ -27,7 +27,7 @@ export const createPost = async (req, res = response) => {
             post
         });
     } catch (e) {
-        console.e(e);
+        console.error(e);
         res.status(500).json({ msg: 'Internal server error' });
     }
 }

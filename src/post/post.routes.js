@@ -3,7 +3,8 @@ import { check } from "express-validator";
 import {
     getPosts,
     createPost,
-    updatePost
+    updatePost,
+    deletePost
 } from "./post.controller.js";
 import {
     existenteEmail,
@@ -22,9 +23,14 @@ router.post(
         check("title", "Title is required").not().isEmpty(),
         check("category", "Category is required").not().isEmpty(),
         check("mainText", "Main text is required").not().isEmpty(),
-        // Puedes agregar más validaciones según tus necesidades
-        validarCampos, // Middleware para manejar errores de validación
-        validarJWT // Middleware para verificar el token JWT  
+        validarCampos, 
+        validarJWT  
     ],
     createPost
 );
+
+router.put("/:id", validarJWT, updatePost);
+
+router.delete("/:id", validarJWT, deletePost);
+
+export default router;
