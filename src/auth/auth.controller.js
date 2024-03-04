@@ -8,7 +8,6 @@ export const login = async (req, res) => {
     try {
         let user;
 
-        // Buscar por email o username
         user = await User.findOne({
             $or: [
                 { email: emailOrUsername },

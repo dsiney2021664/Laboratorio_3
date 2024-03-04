@@ -1,0 +1,76 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Comment",
+    "dateExported": "2024-03-04T03:45:10.623Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "7a381ffb-af1a-4247-92aa-b9c16ccd882a",
+            "colId": "ccd0e103-7c17-4ad0-b8f9-a841dd3745cd",
+            "containerId": "",
+            "name": "commentPost",
+            "url": "http://localhost:3000/postmanager/v1/comment",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-02T17:59:45.231Z",
+            "modified": "2024-03-04T03:40:54.024Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"Tienes razón, es muy buen juego\",\n  \"postId\": \"65e53ca0de5858126f66c905\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "426b5d4a-e64e-41e9-a0c4-9040452e3ec3",
+            "colId": "ccd0e103-7c17-4ad0-b8f9-a841dd3745cd",
+            "containerId": "",
+            "name": "commentPut",
+            "url": "http://localhost:3000/postmanager/v1/comment/65e3b7e00c12528545c1d413",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-02T23:09:26.552Z",
+            "modified": "2024-03-04T03:40:47.312Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"sssssssss\",\n  \"postId\": \"65e3b7e00c12528545c1d413\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "34b96790-8b0a-4639-94a0-fc56599bd524",
+            "colId": "ccd0e103-7c17-4ad0-b8f9-a841dd3745cd",
+            "containerId": "",
+            "name": "commentDelete",
+            "url": "http://localhost:3000/postmanager/v1/comment/65e53d6fde5858126f66c91d",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-02T23:01:32.118Z",
+            "modified": "2024-03-04T03:40:37.996Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

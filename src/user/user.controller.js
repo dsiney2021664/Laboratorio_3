@@ -2,7 +2,6 @@ import { response, request } from "express";
 import bcryptjs from 'bcryptjs';
 import User from './user.model.js';
 
-// Lista de Usuarios
 export const getUsers = async (req = request, res = response) => {
     const { limite, desde } = req.query;
     const query = { state: true };
@@ -19,7 +18,6 @@ export const getUsers = async (req = request, res = response) => {
     });
 }
 
-// Crear Usuario
 export const createUser = async (req, res) => {
     const { name, lastName, userName, email, password, state } = req.body;
     const user = new User({ name, lastName, userName, email, password, state });
@@ -34,7 +32,6 @@ export const createUser = async (req, res) => {
     });
 }
 
-// Actualizar Usuario
 export const updateUser = async (req, res = response) => {
     const { id } = req.params;
     const { oldPassword, newPassword, ...rest } = req.body;

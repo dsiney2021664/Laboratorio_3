@@ -7,6 +7,7 @@ import morgan from 'morgan'
 import userRoutes from '../src/user/user.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import postRoutes from '../src/post/post.routes.js';
+import commentRoutes from '../src/comment/comment.routes.js';
 import { dbConnection } from './mongo.js';
 
 class Server{
@@ -16,6 +17,7 @@ class Server{
         this.usuarioPath = '/postmanager/v1/users';
         this.authPath = '/postmanager/v1/auth';
         this.postPath = '/postmanager/v1/post'
+        this.commentPath = '/postmanager/v1/comment'
 
         this.middlewares();
         this.conectarDB();
@@ -38,6 +40,7 @@ class Server{
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.postPath, postRoutes);
+        this.app.use(this.commentPath, commentRoutes);
     }
 
     listen(){

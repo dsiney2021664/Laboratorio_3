@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "User",
+    "dateExported": "2024-03-04T03:44:56.796Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a05957bc-202e-48d1-90c2-11ac49fb9099",
+            "colId": "1f9c9de7-024b-4ec1-a0cf-d888057ed017",
+            "containerId": "",
+            "name": "registerUser",
+            "url": "http://localhost:3000/postmanager/v1/users/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T03:25:56.119Z",
+            "modified": "2024-03-04T03:13:47.988Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Uriel\",\n  \"lastName\": \"Rogel\",\n  \"userName\": \"Urogel\",\n  \"email\": \"Urogel@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b02849bf-b150-439e-93be-9356aaf1cfba",
+            "colId": "1f9c9de7-024b-4ec1-a0cf-d888057ed017",
+            "containerId": "",
+            "name": "getUsers",
+            "url": "http://localhost:3000/postmanager/v1/users/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-01T03:42:43.908Z",
+            "modified": "2024-03-04T03:12:51.391Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "066f27c8-60b7-4618-a0fa-189259f76c60",
+            "colId": "1f9c9de7-024b-4ec1-a0cf-d888057ed017",
+            "containerId": "",
+            "name": "putUser",
+            "url": "http://localhost:3000/postmanager/v1/users/65e3b72e0c12528545c1d3fc",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-01T03:50:12.676Z",
+            "modified": "2024-03-02T23:33:53.523Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"oldPassword\": \"123456\",\n  \"newPassword\":\"1234567\",\n  \"name\": \"Diego\",\n  \"lastName\": \"Siney\",\n  \"userName\": \"Dsiney\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

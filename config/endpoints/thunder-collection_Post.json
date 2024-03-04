@@ -1,0 +1,90 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Post",
+    "dateExported": "2024-03-04T03:45:03.322Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9754a300-f971-424b-a2a4-51c0eb32b9ce",
+            "colId": "e0d77e4f-a0b8-4466-83eb-89fa007521a9",
+            "containerId": "",
+            "name": "postPost",
+            "url": "http://localhost:3000/postmanager/v1/post",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T17:29:14.749Z",
+            "modified": "2024-03-04T03:41:01.851Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"La mejor comida\",\n  \"category\": \"Gastronomia\",\n  \"mainText\": \"En este caso vamos a cocinar un caldo de res\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6d251d3c-4c5c-4951-ad46-e73da023164f",
+            "colId": "e0d77e4f-a0b8-4466-83eb-89fa007521a9",
+            "containerId": "",
+            "name": "postGet",
+            "url": "http://localhost:3000/postmanager/v1/post",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-03-02T05:34:41.408Z",
+            "modified": "2024-03-02T05:34:45.213Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b6a658b3-ce6e-44b9-9608-3c38dc7097ac",
+            "colId": "e0d77e4f-a0b8-4466-83eb-89fa007521a9",
+            "containerId": "",
+            "name": "postPut",
+            "url": "http://localhost:3000/postmanager/v1/post/65e35e368f86657d90223dff",
+            "method": "PUT",
+            "sortNum": 17500,
+            "created": "2024-03-02T06:01:58.132Z",
+            "modified": "2024-03-04T03:14:54.837Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Actualizacion\",\n  \"category\": \"Actualizacion\",\n  \"mainText\": \"Texto principal del post\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2a9778f5-c649-49e1-9082-304877192acb",
+            "colId": "e0d77e4f-a0b8-4466-83eb-89fa007521a9",
+            "containerId": "",
+            "name": "postDelete",
+            "url": "http://localhost:3000/postmanager/v1/post/65e35e368f86657d90223dff",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-03-02T05:25:36.429Z",
+            "modified": "2024-03-04T03:14:59.967Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

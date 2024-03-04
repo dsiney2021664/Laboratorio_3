@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "authLogin",
+    "dateExported": "2024-03-04T03:44:38.791Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4310c8a2-8aea-47a5-ad2b-50093afdbd92",
+            "colId": "f8db2d43-5530-46ef-9323-38826ba93fca",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:3000/postmanager/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-16T05:07:14.635Z",
+            "modified": "2024-03-04T03:17:45.054Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"emailOrUsername\":\"Dsiney\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

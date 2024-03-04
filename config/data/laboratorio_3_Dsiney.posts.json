@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "65e53ca0de5858126f66c905"
+  },
+  "title": "Futbol",
+  "category": "Deportes",
+  "mainText": "Fifa el juego mas lindo",
+  "state": true,
+  "createdBy": {
+    "$oid": "65e53be4de5858126f66c8f6"
+  },
+  "comments": [
+    {
+      "$oid": "65e53d42de5858126f66c913"
+    },
+    {
+      "$oid": "65e54249de5858126f66c935"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e53cfbde5858126f66c90c"
+  },
+  "title": "La mejor comida",
+  "category": "Gastronomia",
+  "mainText": "En este caso vamos a cocinar un caldo de res",
+  "state": true,
+  "createdBy": {
+    "$oid": "65e53c6bde5858126f66c8fe"
+  },
+  "comments": [
+    {
+      "$oid": "65e53d6fde5858126f66c91d"
+    }
+  ],
+  "__v": 0
+}]

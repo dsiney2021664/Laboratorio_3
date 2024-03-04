@@ -1,9 +1,14 @@
 import { response, request } from "express";
 import Post from './post.model.js';
+import Comment from '../comment/comment.model.js';
 
 export const getPosts = async (req = request, res = response) => {
     try {
         const posts = await Post.find({ state: true }).populate('createdBy', 'email');
+        for (const post of posts) {
+            const comments = await Comment.find({ post: post._id }).populate('createdBy', 'email');
+            post.comments = comments;
+        }
         res.status(200).json({
             posts,
         });
@@ -64,7 +69,6 @@ export const updatePost = async (req, res = response) => {
     }
 }
 
-// Eliminar una publicación
 export const deletePost = async (req, res = response) => {
     const { id } = req.params;
 
@@ -75,12 +79,11 @@ export const deletePost = async (req, res = response) => {
             return res.status(404).json({ msg: 'Post not found' });
         }
 
-        // Verificar si el usuario que intenta eliminar el post es el creador del post
         if (String(post.createdBy) !== req.user.id) {
             return res.status(403).json({ msg: 'Unauthorized access' });
         }
 
-        post.state = false; // Cambiar el estado del post a falso en lugar de eliminarlo físicamente
+        post.state = false; 
         await post.save();
 
         res.status(200).json({
